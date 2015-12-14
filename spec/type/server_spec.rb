@@ -44,7 +44,7 @@ describe server("stackspec.example.jp") do
     end
   end
 
-  context "when security groups are duplicationg" do
+  context "when security groups are duplicating" do
     let(:security_groups) do
       [
         double("name" => "http"),

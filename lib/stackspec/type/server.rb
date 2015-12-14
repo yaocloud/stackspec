@@ -10,6 +10,12 @@ module Stackspec::Type
       @resource ||= find_counterpart_resource
     end
 
+    def to_s
+      "OpenStack server #{@name.inspect}"
+    end
+
+    alias inspect to_s
+
     private
     def find_counterpart_resource
       servers =Yao::Server.list_detail(name: @name)

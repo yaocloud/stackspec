@@ -14,6 +14,14 @@ module Stackspec::Type
       "OpenStack server #{@name.inspect}"
     end
 
+    def security_groups
+      resource.security_groups.uniq {|sg| sg["name"] }
+    end
+
+    def has_security_group?(name: nil)
+      !! resource.security_groups.find {|sg| sg["name"] == name }
+    end
+
     alias inspect to_s
 
     private

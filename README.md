@@ -2,7 +2,7 @@
 
 A testing framework for OpenStack resource orchestration.
 
-[![Build Status](https://travis-ci.org/udzura/stackspec.svg?branch=master)](https://travis-ci.org/udzura/stackspec)
+[![Build Status](https://travis-ci.org/yaocloud/stackspec.svg?branch=master)](https://travis-ci.org/yaocloud/stackspec)
 
 A member of [YAO](https://github.com/yaocloud/yao)'s family.
 

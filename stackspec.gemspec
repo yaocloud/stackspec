@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A testing framework for OpenStack resource orchestration}
   spec.description   = %q{A testing framework for OpenStack resource orchestration}
-  spec.homepage      = "https://github.com/udzura/stackspec"
+  spec.homepage      = "https://github.com/yaocloud/stackspec"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

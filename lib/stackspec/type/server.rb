@@ -12,7 +12,7 @@ module Stackspec::Type
 
     private
     def find_counterpart_resource
-      servers =Yao::Server.list(name: @name)
+      servers =Yao::Server.list_detail(name: @name)
       if servers.empty?
         raise Stackspec::ResourceNotFound, "No server found for name: #{@name.inspect}"
       end

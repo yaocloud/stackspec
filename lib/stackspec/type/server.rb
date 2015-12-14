@@ -15,24 +15,27 @@ module Stackspec::Type
     end
 
     def security_groups
-      resource.security_groups.uniq {|sg| sg["name"] }
+      resource.security_groups.uniq {|sg| sg.name }
     end
 
     def has_security_group?(name: nil)
-      !! resource.security_groups.find {|sg| sg["name"] == name }
+      !! resource.security_groups.find {|sg| sg.name == name }
     end
 
     alias inspect to_s
 
     private
     def find_counterpart_resource
-      servers =Yao::Server.list_detail(name: @name)
+      begin
+        servers = Yao::Server.list_detail(name: @name)
+      rescue => e
+        raise Stackspec::ResourceNotFound, "Something is wrong: #{e.class}: #{e.message}"
+      end
+
       if servers.empty?
         raise Stackspec::ResourceNotFound, "No server found for name: #{@name.inspect}"
       end
       servers.first
-    rescue => e
-      raise Stackspec::ResourceNotFound, "Something is wrong: #{e.class}: #{e.message}"
     end
 
     def method_missing(name)

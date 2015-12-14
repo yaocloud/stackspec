@@ -19,11 +19,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "yao"
+  spec.add_runtime_dependency 'yao'
   spec.add_runtime_dependency 'rspec', '>= 3'
   spec.add_runtime_dependency 'rspec-its'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rspec-collection_matchers'
 end

@@ -69,7 +69,7 @@ Then run to check the OpenStack orchestration is OK:
 
 ```console
 $ rspec spec/tenant_name/servers_spec.rb
-OpenStack server "drone-worker004.pepabo.com"
+OpenStack server "stackspec.example.com"
   should have security group {:name=>"https"}
   name
     should eq "stackspec.example.com"
